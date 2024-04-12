@@ -1,10 +1,13 @@
 @echo off
 setlocal enabledelayedexpansion
-
+mode con: cols=80 lines=25
 rem Check if the script is running with admin privileges
 net session >nul 2>&1
 if %errorlevel% equ 0 (
+
     color 9
+	echo Credit to Imistrz21 on GitHub
+    echo ==================================
     echo Loading [.]
     timeout /t 1 >nul
     color b
@@ -24,6 +27,8 @@ if %errorlevel% equ 0 (
     timeout /t 3 >nul
     exit
 )
+echo Credit to Imistrz21 on GitHub
+echo ==================================
 color 9
     echo Loading [.]
 	set "file_path="
