@@ -11,6 +11,7 @@ if "%file_path%"=="" (
 )
 
 if exist "%file_path%" (
+    color a
     echo File found.
     
     :choose_bypass
@@ -25,21 +26,25 @@ if exist "%file_path%" (
     echo Bypass choice is: %bypass_choice%
     
     if "%bypass_choice%"=="1" (
+        color a
         set bypass_type=Steam
         echo Running "%file_path%" with Steam bypass...
         cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" "%file_path%""
         exit
     ) else if "%bypass_choice%"=="2" (
+        color a
         set bypass_type=Epic Games
         echo Running "%file_path%" with Epic Games bypass...
         cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" "%file_path%""
         exit
     ) else if "%bypass_choice%"=="3" (
+        color a
         set bypass_type=Other programs
         echo Running "%file_path%" with Other programs bypass...
         cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" "%file_path%""
         exit
     ) else (
+        color c
         echo Invalid bypass type. Please choose 1, 2, or 3.
         goto choose_bypass
     )
@@ -50,5 +55,5 @@ if exist "%file_path%" (
     echo File not found.
     goto check_file_path
 )
-
+color a
 pause
