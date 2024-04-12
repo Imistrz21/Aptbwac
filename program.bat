@@ -21,7 +21,7 @@ if exist "%file_path%" (
     echo 3. Other programs bypass
 
     set /p bypass_choice="Enter the bypass type (1, 2, or 3): "
-    rem Remove leading and trailing whitespace characters
+    rem 
     set "bypass_choice=%bypass_choice: =%"
     echo Bypass choice is: %bypass_choice%
     
