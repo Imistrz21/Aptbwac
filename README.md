@@ -1,7 +1,11 @@
 # Aptbwac
 
 **Aptbwac** (short for "A Program That Bypasses Windows Account Check") is a tool designed to bypass Windows account restrictions, providing users with enhanced control over their system. 
-
+[![Views](https://komarev.com/ghpvc/?username=your_username&label=Views)](https://github.com/Imistrz21/Aptbwac)
+[![Latest Release](https://img.shields.io/github/v/release/your_username/your_repository?label=Latest%20Release)](https://github.com/Imistrz21/Aptbwac/releases)
+[![Downloads](https://img.shields.io/badge/downloads-X-brightgreen)](https://github.com/Imistrz21/Aptbwac/releases)
+[![GitHub issues](https://img.shields.io/github/issues/your_username/your_repository)](https://github.com/Imistrz21/Aptbwac/issues)
+[![GitHub stars](https://img.shields.io/github/stars/your_username/your_repository)](https://github.com/Imistrz21/Aptbwac/stargazers)
 ## Features
 - **Account Bypass:** Aptbwac allows users to bypass Windows account checks, enabling access to restricted resources and functionalities.
 - **Enhanced Control:** Gain greater control over your system by bypassing account restrictions and accessing features that would otherwise be inaccessible.
