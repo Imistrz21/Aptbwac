@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-mode con: cols=80 lines=25
+mode con: cols=70 lines=20
 
 :loading
 cls
@@ -24,22 +24,25 @@ echo ==================================
 echo Choose the option:
 echo 1. Start an executable
 echo 2. Run an ms-settings command
+echo 3. Exit
 echo ==================================
 echo Credit to Imistrz21 on GitHub
 echo.
-set /p option_choice="Enter the option (1 or 2): "
+set /p option_choice="Enter the option (1, 2, or 3): "
 set "option_choice=%option_choice: =%"
 
 if "%option_choice%"=="1" (
     goto start_executable
 ) else if "%option_choice%"=="2" (
     goto run_mssettings
+) else if "%option_choice%"=="3" (
+    exit /b
 ) else (
     color c
     cls
     echo Credit to Imistrz21 on GitHub
     echo ==================================
-    echo Invalid option. Please choose 1 or 2.
+    echo Invalid option. Please choose 1, 2, or 3.
     echo ==================================
     echo Credit to Imistrz21 on GitHub
     echo.
