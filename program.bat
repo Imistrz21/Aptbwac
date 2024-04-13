@@ -24,11 +24,12 @@ echo ==================================
 echo Choose the option:
 echo 1. Start an executable
 echo 2. Run an ms-settings command
-echo 3. Exit
+echo 3. Credits
+echo 4. Exit
 echo ==================================
 echo Credit to Imistrz21 on GitHub
 echo.
-set /p option_choice="Enter the option (1, 2, or 3): "
+set /p option_choice="Enter the option (1, 2, 3, or 4): "
 set "option_choice=%option_choice: =%"
 
 if "%option_choice%"=="1" (
@@ -36,13 +37,15 @@ if "%option_choice%"=="1" (
 ) else if "%option_choice%"=="2" (
     goto run_mssettings
 ) else if "%option_choice%"=="3" (
+    goto credits
+) else if "%option_choice%"=="4" (
     exit /b
 ) else (
     color c
     cls
     echo Credit to Imistrz21 on GitHub
     echo ==================================
-    echo Invalid option. Please choose 1, 2, or 3.
+    echo Invalid option. Please choose 1, 2, 3, or 4.
     echo ==================================
     echo Credit to Imistrz21 on GitHub
     echo.
@@ -171,3 +174,15 @@ echo Credit to Imistrz21 on GitHub
 echo.
 pause
 goto run_mssettings_command
+
+:credits
+cls 
+color b
+echo Credit to Imistrz21 on GitHub
+echo ==================================
+echo Hello, Im Imistrz21, a programmer that does stupid things with batch.
+echo ==================================
+echo Credit to Imistrz21 on GitHub
+echo.
+pause
+goto select_option
