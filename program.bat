@@ -1,62 +1,53 @@
 @echo off
 setlocal enabledelayedexpansion
 mode con: cols=80 lines=25
-rem Check if the script is running with admin privileges
-net session >nul 2>&1
-if %errorlevel% equ 0 (
 
-    color 9
-	echo Credit to Imistrz21 on GitHub
-    echo ==================================
-    echo Loading [.]
-    timeout /t 1 >nul
-    color b
-    echo Loading [..]
-    timeout /t 1 >nul
-    color c
-    timeout /t 1 >nul
-    color c
-    timeout /t 1 >nul
-    cls
-    echo Credit to Imistrz21 on GitHub
-    echo ==================================
-    echo Why u use dis script with admin????
-    echo ==================================
-    echo Credit to Imistrz21 on GitHub
-    echo.
-    timeout /t 3 >nul
-    exit
-)
-echo Credit to Imistrz21 on GitHub
-echo ==================================
-color 9
-    echo Loading [.]
-	set "file_path="
-    timeout /t 1 >nul
-    color b
-    echo Loading [..]
-	set "file_path="
-    timeout /t 1 >nul
-    color a
-    echo Loading [...]
-	set "file_path="
-    timeout /t 1 >nul
-    color
-    cls
-
-:main
+:loading
 cls
-color a 
+color 9
 echo Credit to Imistrz21 on GitHub
 echo ==================================
-echo Welcome!!
-echo Everything initialized properly!!!
+echo Loading [.]
+timeout /t 1 >nul
+color b
+echo Loading [..]
+timeout /t 1 >nul
+color a
+echo Loading [...]
+timeout /t 1 >nul
+
+:select_option
+cls
+color a
+echo Credit to Imistrz21 on GitHub
+echo ==================================
+echo Choose the option:
+echo 1. Start an executable
+echo 2. Run an ms-settings command
 echo ==================================
 echo Credit to Imistrz21 on GitHub
 echo.
-pause
-cls
+set /p option_choice="Enter the option (1 or 2): "
+set "option_choice=%option_choice: =%"
 
+if "%option_choice%"=="1" (
+    goto start_executable
+) else if "%option_choice%"=="2" (
+    goto run_mssettings
+) else (
+    color c
+    cls
+    echo Credit to Imistrz21 on GitHub
+    echo ==================================
+    echo Invalid option. Please choose 1 or 2.
+    echo ==================================
+    echo Credit to Imistrz21 on GitHub
+    echo.
+    pause
+    goto select_option
+)
+
+:start_executable
 :check_file_path
 cls
 color a 
@@ -139,4 +130,41 @@ echo Credit to Imistrz21 on GitHub
 echo. 
 color a
 pause
-goto main
+cls
+goto select_option
+
+:run_mssettings
+:run_mssettings_command
+cls
+color a 
+echo Credit to Imistrz21 on GitHub
+echo ==================================
+echo Enter the ms-settings command:
+set /p mssettings_command="Command: "
+
+if "%mssettings_command%"=="" goto invalid_command
+cls
+color a
+echo Credit to Imistrz21 on GitHub
+echo ==================================
+echo Running ms-settings command: %mssettings_command%
+echo ==================================
+cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start ms-settings:%mssettings_command%"
+echo Credit to Imistrz21 on GitHub
+echo.
+color a
+pause
+cls
+goto select_option
+
+:invalid_command
+cls
+color c
+echo Credit to Imistrz21 on GitHub
+echo ==================================
+echo Invalid ms-settings command. Please enter a valid command.
+echo ==================================
+echo Credit to Imistrz21 on GitHub
+echo.
+pause
+goto run_mssettings_command
