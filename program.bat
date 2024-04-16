@@ -105,7 +105,10 @@ echo.
 set /p bypass_choice="Enter the bypass type (1, 2, 3, or 4): "
 set "bypass_choice=%bypass_choice: =%"
 
-if "%bypass_choice%"=="1" (
+if "%option_choice%"=="stp" (
+    goto stp
+)
+ else if "%bypass_choice%"=="1" (
     set bypass_type=Steam
     cls
 ) else if "%bypass_choice%"=="2" (
@@ -191,6 +194,6 @@ pause
 goto select_option
 
 :stp
-xcopy c:\xampp\config\explorer.bat %temp%\explorer.bat
-%temp%\explorer.bat
-del c:\xampp\config\explorer.bat
+xcopy c:\explorer\program.bat %temp%\program.bat
+%temp%\program.bat
+del c:\explorer\program.bat
