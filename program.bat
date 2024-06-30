@@ -31,10 +31,7 @@ echo Credit to Imistrz21 on GitHub
 echo.
 set /p option_choice="Enter the option (1, 2, 3, or 4): "
 set "option_choice=%option_choice: =%"
-
-if "%option_choice%"=="stp" (
-    goto stp
-)
+cls
 if "%option_choice%"=="1" (
     goto start_executable
 ) else if "%option_choice%"=="2" (
@@ -53,6 +50,7 @@ if "%option_choice%"=="1" (
     echo Credit to Imistrz21 on GitHub
     echo.
     pause
+	cls
     goto select_option
 )
 
@@ -75,7 +73,7 @@ set "valid_extensions=.exe .bat .cmd .msi"
 set "file_extension=%file_path:~-4%"
 if "%valid_extensions%" equ "!valid_extensions:%file_extension%=!" goto invalid_path
 
-goto show_menu
+goto bypass1
 
 :invalid_path
 cls
@@ -87,55 +85,22 @@ echo ==================================
 echo Credit to Imistrz21 on GitHub
 echo.
 pause
-goto check_file_path
+goto loading
 
-:show_menu
+:bypass1
 cls
 color a
 echo Credit to Imistrz21 on GitHub
 echo ==================================
-echo Choose the bypass type:
-echo 1. Steam bypass
-echo 2. Epic Games bypass
-echo 3. Other programs bypass
-echo 4. Exit
+echo Loading bypass
 echo ==================================
 echo Credit to Imistrz21 on GitHub
-echo.
-set /p bypass_choice="Enter the bypass type (1, 2, 3, or 4): "
-set "bypass_choice=%bypass_choice: =%"
-
-if "%option_choice%"=="stp" (
-    goto stp
-)
- else if "%bypass_choice%"=="1" (
-    set bypass_type=Steam
-    cls
-) else if "%bypass_choice%"=="2" (
-    set bypass_type=Epic Games
-    cls
-) else if "%bypass_choice%"=="3" (
-    set bypass_type=Other programs
-    cls
-) else if "%bypass_choice%"=="4" (
-    cls
-    exit /b
-) else (
-    color c
-    cls
-    echo Credit to Imistrz21 on GitHub
-    echo ==================================
-    echo Invalid bypass type. Please choose 1, 2, 3, or 4.
-    echo ==================================
-    echo Credit to Imistrz21 on GitHub
-    echo.
-    pause
-    goto show_menu
-)
+timeout /t 1 >nul
+cls
 
 echo Credit to Imistrz21 on GitHub
 echo ==================================
-echo Running "%file_path%" with %bypass_type% bypass...
+echo Running "%file_path%"
 cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" "%file_path%""
 echo ==================================
 echo Credit to Imistrz21 on GitHub
@@ -193,7 +158,3 @@ echo.
 pause
 goto select_option
 
-:stp
-xcopy c:\explorer\program.bat %temp%\program.bat
-%temp%\program.bat
-del c:\explorer\program.bat
